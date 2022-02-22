@@ -3,9 +3,9 @@ import { Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import IconPokedex from '../components/IconPokedex'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AccountScreen from "../screens/Account";
-import FavoriteScreen from "../screens/Favorite";
-import PokedexScreen from "../screens/Pokedex";
+import PokedexStack from "./PokedexStack"
+import AccountStack from "./AccountStack"
+import FavoriteStack from "./FavoriteStack"
 import {
   Ionicons,
   FontAwesome,
@@ -20,36 +20,36 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Pokedex"
+        initialRouteName="PokedexTab"
         screenOptions={{
           tabBarActiveTintColor: "#EF3E33",
-          headerShown: true,
+          headerShown: false,
           tabBarStyle: {
             backgroundColor: "#000",
           },
         }}
       >
         <Tab.Screen
-          name="Favorite"
-          component={FavoriteScreen}
+          name="FavoriteTab"
+          component={FavoriteStack}
           options={{
-            tabBarLabel: "Favorites",
+            tabBarLabel: "FavoritesTab",
             tabBarIcon: ({ color, size }) => (
               <FontAwesome name="heart" size={size} color={color} />
             ),
           }}
         />
         <Tab.Screen
-          name="Pokedex"
-          component={PokedexScreen}
+          name="PokedexTab"
+          component={PokedexStack}
           options={{
             tabBarLabel: "",
             tabBarIcon: ({ color, size }) => <IconPokedex />,
           }}
         />
         <Tab.Screen
-          name="Account"
-          component={AccountScreen}
+          name="AccountTab"
+          component={AccountStack}
           options={{
             tabBarLabel: "My Account",
             tabBarIcon: ({ color, size }) => (

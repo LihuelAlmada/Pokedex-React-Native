@@ -7,9 +7,9 @@ const FavoriteStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen 
-        name="Favorite"
+        name="FavoriteStack"
         component={FavoriteScreen}
-        options={{ title: "Favorites"}}
+        options={{ title: "FavoritesStack"}}
       />
     </Stack.Navigator>
   )
