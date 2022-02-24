@@ -37,7 +37,7 @@ export default function PokedexScreen() {
 
   return (
     <View>
-      <PokemonList pokemons={pokemons}/>
+      <PokemonList pokemons={pokemons} loadPokemons={loadPokemons}/>
     </View>
   );
 }
