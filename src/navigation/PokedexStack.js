@@ -10,7 +10,7 @@ const PokedexStack = () => {
       <Stack.Screen 
         name="PokedexStack"
         component={PokedexScreen}
-        options={{ title: "Pokedex"}}
+        options={{ title: "Pokedex", headerShown: false}}
       />
       <Stack.Screen 
         name="PokemonStack"
