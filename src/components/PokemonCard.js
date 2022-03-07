@@ -1,7 +1,8 @@
 import { Text, View, StyleSheet, Image, Pressable } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
 import getColorByPokemonType from '../utils/getColorByPokemonType'
 import {capitalize} from 'lodash'
+import { useNavigation } from '@react-navigation/native';
 
 export default function PokemonCard (props) {
   const { pokemon } = props;
@@ -11,6 +12,7 @@ export default function PokemonCard (props) {
   const goToPokemon = () => {
     console.log('vamos a', pokemon.name)
   }
+  const navigation = useNavigation();
     return (
       <Pressable
         onPress={goToPokemon}
@@ -21,8 +23,6 @@ export default function PokemonCard (props) {
               
           <Image source={{ uri: pokemon.image}} style={styles.image}/>
           <Text style={styles.name}>{capitalize(pokemon.name)}</Text>
-         
-          {/* <Text>{pokemon.type}</Text> */}
           <Text style={styles.number}>#{`${pokemon.order}`.padStart(3,0)}</Text>
             </View>
           </View>
