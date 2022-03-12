@@ -10,17 +10,20 @@ const PokemonScreen = (props) => {
   useEffect(()=>{
     (async () => {
       try {
-        const response = await get
+        const response = await getPokemonDetailsApi(params.id);
+        
+        setPokemon(response)
       } catch(error) {
         navigation.goBack();
       }
     })()
-  })
+  }, [params])
 
   if (!pokemon) return null;
   return (
     <View>
-      <Text>Esto es un {pokemon}</Text>
+      <Text>Esto es un {pokemon.id}</Text>
+      <Text>{pokemon.name}</Text>
     </View>
   );
 };

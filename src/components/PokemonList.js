@@ -6,7 +6,6 @@ const PokemonList = (props) => {
   const { pokemons, loadPokemons, isNext } = props;
 
   const loadMore = () => {
-    console.log("Cargando pokemons");
     loadPokemons();
   };
   return (

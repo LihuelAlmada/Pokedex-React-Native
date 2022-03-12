@@ -6,13 +6,13 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function PokemonCard (props) {
   const { pokemon } = props;
-  console.log(props)
   const pokemonColor = getColorByPokemonType(pokemon.type)
   const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles}
+  const navigation = useNavigation();
   const goToPokemon = () => {
     console.log('vamos a', pokemon.name)
+    navigation.navigate("PokemonStack", {id: pokemon.id});
   }
-  const navigation = useNavigation();
     return (
       <Pressable
         onPress={goToPokemon}
