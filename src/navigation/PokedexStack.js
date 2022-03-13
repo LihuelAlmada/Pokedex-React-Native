@@ -15,7 +15,12 @@ const PokedexStack = () => {
       <Stack.Screen 
         name="PokemonStack"
         component={PokemonScreen}
-        options={{ title: "Pokemon"}}
+        options={ {
+          title: "",
+          headerShown: true,
+          headerTransparent: true,
+          headerShadowVisible: false
+      } }
       />
     </Stack.Navigator>
   )
