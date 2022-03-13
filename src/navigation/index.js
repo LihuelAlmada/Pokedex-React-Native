@@ -8,9 +8,7 @@ import AccountStack from "./AccountStack"
 import FavoriteStack from "./FavoriteStack"
 import {
   Ionicons,
-  FontAwesome,
-  AntDesign,
-  MaterialCommunityIcons,
+  FontAwesome
 } from "@expo/vector-icons";
 import { render } from "react-dom";
 
