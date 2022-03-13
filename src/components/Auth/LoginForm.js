@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import {user, userDetails} from '../../utils/userDB'
 
 export default function LoginForm() {
 
@@ -12,6 +13,13 @@ export default function LoginForm() {
     onSubmit: (formValues) => {
       console.log('formulario enviado');
       console.log( formValues);
+      const { username, password} = formValues
+      if (username !== user.username || password !== user.password) {
+        console.log('eRROR en login')
+      }else{
+        console.log('entra al login papa')
+
+      }
     }
   });
   return (
